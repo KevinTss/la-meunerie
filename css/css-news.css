@@ -1,0 +1,47 @@
+
+/* ############################################################################################## *\
+    
+    SECTION NEWS
+    
+\* ############################################################################################## */
+
+section#page_news{
+    
+    width: 70%;
+    margin: auto;
+    padding: 40px 0;
+    text-align: center;
+    
+}
+
+section#page_news article{
+    
+    margin-top: 20px;
+    padding: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    clear: both;
+    text-align: left;
+    
+}
+
+section#page_news article p{
+    
+    font-size: 2rem;
+    
+}
+section#page_news article p h2{
+    
+    text-align: right;
+    
+}
+section#page_news article p img{
+    
+    float: left;
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    
+}
+
+
+

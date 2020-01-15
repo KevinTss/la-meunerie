@@ -1,0 +1,48 @@
+<Files gestion.php>
+AuthUserFile /home/lameunerhg/www/.htpasswd
+AuthName "Veuillez vous identifier"
+AuthType Basic
+
+<Limit GET POST>
+Require valid-user
+</Limit>
+
+</Files>
+
+<Files gestion_fournisseurs.php>
+AuthUserFile /home/lameunerhg/www/.htpasswd
+AuthName "Veuillez vous identifier"
+AuthType Basic
+
+<Limit GET POST>
+Require valid-user
+</Limit>
+
+</Files>
+
+
+
+
+
+
+# Tu définis ton script d'entrée
+#DirectoryIndex gestion.php
+#<Files gestion.php>
+# Le titre de ta fenetre modal
+#AuthName "Identification :"
+ 
+# Le type d'authentification
+#AuthType Basic
+ 
+# Le chemin relatif en partie de la root vers ton .htpasswd qui contient le mot de passe crypté
+#AuthUserFile "/home/lameunerhg/www/.htpasswd"
+ 
+# Les utilisateurs qui peuvent d'identifier
+#<Limit GET>
+#require user kev
+##require user guest
+#</Limit>
+
+#Require valid-user
+
+#</Files>

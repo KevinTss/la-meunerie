@@ -1,0 +1,172 @@
+
+
+/* ################### *\
+    
+    RESPONSIVE
+    
+\* ################### */
+
+div.wrapper, div.container{
+    
+    height: 100%;
+    
+}
+
+div.wrapper{
+    
+    overflow: hidden; /* Evite le scroll horizontale sur smartphone */
+    
+}
+
+div.container{
+    
+    height: 100%;
+    transform: translateX(0px);
+    transition-duration: 0.3s;
+    
+}
+
+div.site-cache{
+    
+    transform: translateX(0px);
+    transition-duration: 0.3s;
+    
+}
+
+div.site_content{
+    
+    margin-top: 0;
+    position: absolute;
+    top: 166px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;    /* Permet de laisser l'effet de 'lancement du scroll' sur smartphone */
+    
+}
+
+    
+nav{
+    
+    position: static;
+/*    color: black;*/
+    height: 66px;
+    line-height: 66px;
+    background-image: none;
+    
+}
+
+.head__icon{                /* On place le bloc logo du menu */
+
+    position: relative;
+    display: block;
+    float: right;
+    height: 166px;
+    width: 50px;
+    cursor: pointer;
+
+}
+
+.head__icon:after{            /* Ce bloc permet de créer le logo du menu a trois barres en full css */
+    
+    content:'';
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 0;
+    top: 16px;
+    left: 15px;
+    -webkit-box-shadow: 0 10px 0 1px white,
+                        0 16px 0 1px white,
+                        0 22px 0 1px white;
+    box-shadow: 0 10px 0 1px white,
+                0 16px 0 1px white,
+                0 22px 0 1px white;
+    
+}
+    
+
+div.menu{
+    
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(155, 100, 100, 1);
+    width: 250px;
+    transform: translateX(250px);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;    /* Permet de laisser l'effet de 'lancement du scroll' sur smartphone */
+    
+    
+}
+
+div.menu li{
+    
+    display: block;
+    width: 200px;
+    height: 3rem;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid rgba(79, 43, 43, 1);
+    line-height: 3rem;
+    
+}
+
+.width--sidebar div.container{
+    
+    transform: translateX(-250px);
+    
+}
+
+.width--sidebar div.site-cache{
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translateX(-250px);
+    
+}
+
+div.site_content{
+    
+    margin-top: -100px/*66px*/;
+    
+}
+
+/* ############################################################################################## *\
+    
+    section
+    
+\* ############################################################################################## */
+
+
+
+/* ############################################################################################## *\
+    
+    footer
+    
+\* ############################################################################################## */
+
+footer{
+    
+    display: block;
+    position: absolute;
+    bottom: 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+

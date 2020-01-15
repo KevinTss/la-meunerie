@@ -1,0 +1,1330 @@
+
+/* ############################################################################################## *\
+    
+   IMPORTS 
+    
+\* ############################################################################################## */
+
+@import url(https://fonts.googleapis.com/css?family=Arizonia);    /* Police pour le titre menu (adroise) */
+
+/* ############################################################################################## *\
+    
+    ANIMATIONS
+    
+\* ############################################################################################## */
+
+@keyframes slider {
+	0%, 20%, 100%	{ left: 0 }
+	25%, 45%		{ left: -100% }
+	50%, 70%		{ left: -200% }
+	75%, 95%		{ left: -300% }
+}
+
+@keyframes timeliner {
+	0%, 25%, 50%, 75%, 100%	{ width: 0;		}
+	20%, 45%, 70%, 90%		{ width: 100%;	}
+}
+
+@keyframes figcaptionner {
+	0%, 25%, 50%, 75%, 100%						{ top: 480px; }
+	5%, 20%, 30%, 45%, 55%, 70%, 80%, 95%		{ top: 420px; }
+}
+
+/* SILDER : http://www.creativejuiz.fr/blog/tutoriels/css3-creer-slideshow-automatique-controlable-transition */
+
+/* ############################################################################################## *\
+    
+    BASE               rgba(68, 68, 68, 1);
+    
+\* ############################################################################################## */
+
+html, body{
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+/*    line-height: 1.4;*/
+    width: 100%;
+    height: 100%;
+    background-color: white;/*rgba(79, 43, 43, 1);*/
+    
+}
+
+h1{
+    
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 3px solid rgba(155, 100, 100, 1);
+    
+}
+
+/* ############################################################################################## *\
+    
+    MENU
+    
+\* ############################################################################################## */
+
+nav{
+    
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 166px;
+    line-height: 100px;
+    color: white;
+    background-image: url('../images/logo/Meunerie_blanc-trait.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-color: rgba(79, 43, 43, 1);
+    z-index: 1200;
+    transition: height 0.3s;
+/*    opacity: 0.2;*/
+    
+}
+
+nav.newlook{    /* Look du menu après scroll */
+    
+/*    background-color: black;*/
+    height: 66px;
+    line-height: 66px;
+    background-image: none;
+    
+}
+
+
+
+
+nav a{
+    
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+.head__logo{
+    
+    font-weight: bold;
+    padding: 0 15px;
+    float: left;
+    width: 200px;
+    height: inherit;
+    
+}
+
+.head__logo img{
+    
+    width: auto;/*198px;*/
+    height: inherit;
+    
+}
+
+.menu{
+    
+    position: absolute;
+    float: left;
+    right: 0;
+    
+}
+
+.menu li{
+        
+    display: inline-block;
+    padding: 0 25px;
+    transition: all 0.3s ease-out;
+
+}
+
+.menu li a{
+    
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.menu ul li:hover{
+    
+    cursor: pointer;
+    border-bottom: 1px solid rgba(155, 100, 100, 1);
+    color: rgba(155, 100, 100, 1);
+    font-weight: 700;
+    
+}
+
+.menu ul li:last-child{
+    
+    text-align: center;
+    
+}
+
+.menu ul li:last-child:hover{
+    
+    border-bottom: none;
+    
+}
+
+.menu ul li:last-child:hover img{
+    
+    background-color: rgba(61, 90, 153, 1);
+    
+}
+
+.menu ul li img{
+    
+    display: inline-block;
+    width: 40px;
+    vertical-align: middle;
+    border-radius: 10px;
+    
+}
+
+
+
+nav.newlook .head__logo{    /* resize du logo et décalement pour le newlook */
+    
+    height: 138%;
+    width: auto;
+    margin-top: -2.7%;
+    
+}
+
+nav.newlook .head__logo img{
+    
+    height: 138%;
+    width: 150px;
+    
+}
+
+/* ############################################################################################## *\
+    
+    CONTENT
+    
+\* ############################################################################################## */
+
+div.site_content{
+    
+    margin-top: 166px;
+    
+}
+
+/* ############################################################################################## *\
+    
+    BANER
+    
+\* ############################################################################################## */
+
+#slider {
+
+	position: relative;
+	width: 100%;
+	height: 480px;
+    z-index: 1;
+    overflow: hidden;
+	
+}
+
+#slider article{
+    
+    display: flex;
+/*    align-content: center;*/
+    
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(255,255,255,0.4);
+    
+}
+#slider article div{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    
+}
+#slider article div span{
+    
+/*    background-color: red;*/
+    font-size: 20px;
+    font-weight: 600;
+    color: #555;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.7);
+    letter-spacing: 2px;
+    
+}
+
+#slider article div span#tel{
+    
+    font-size: 28px;
+    
+}
+
+#slider .container {
+	position:relative;
+	width: inherit;
+	height: inherit;
+	overflow: hidden;
+}
+
+#slider .container .slider_content{
+    
+    position: absolute;
+	left:0; top:0;
+    width: 400%;
+    height: inherit;
+    animation: slider 15s infinite;
+    
+}
+
+#slider .container .slider_content figure{
+    
+    display: inline-block;
+    width: 25%;
+    height: inherit;
+    z-index: 3;
+    
+}
+
+#slider .container .slider_content figure img{
+    
+/*    width: 100%;*/
+    height: 480px;
+    vertical-align: top;
+    
+}
+
+
+
+/* styles de nos légendes */
+#slider figcaption {
+    
+    display: block;
+	position: absolute;
+    top: 420px;
+    width: 25%;
+    height: 2rem;
+    padding: 20px;
+	border-top: 1px solid rgb(225,225,225);
+	text-align:center;
+	letter-spacing: 0.05em;
+	word-spacing: 0.05em;
+	font-family: Georgia, Times, serif;
+	background-color: rgba(255,255,255,0.7);
+	color: #555;
+	text-shadow: -1px -1px 0 rgba(255,255,255,0.3);
+    animation: figcaptionner 15s infinite;
+    
+}
+
+#timeline {
+	position: absolute;
+	background: #999;
+	bottom: 1px;
+	height: 1px;
+	background: rgb(79,43,43);
+	background: rgba(79, 43, 43, 0.8);
+	width: 0;
+	/* fonction d'animation */
+	animation: timeliner 15s infinite;
+}
+
+a.lienFB{
+    
+    color: rgba(79, 43, 43, 1)
+    
+}
+
+/* ############################################################################################## *\
+    
+    SECTION CONTENT
+    
+\* ############################################################################################## */
+
+
+
+
+
+/* ############################################################################################## *\
+    
+    section hebdo-resa
+    
+\* ############################################################################################## */
+
+
+#hebdo-resa{
+    
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    font-size: 0;
+    padding: 20px 0;
+    background-color: rgba(79, 43, 43, 1);
+    overflow: hidden;
+    
+}
+
+#content-hebdo-resa{
+    
+    display: block;
+    position: relative;
+    width: 100%;
+    
+}
+
+#hebdo{
+    
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    width: 60%;
+    height: 300px;
+    overflow: hidden;
+    vertical-align: top;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+
+#hebdo figure{
+    
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    
+    
+}
+
+#hebdo a{
+
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0);
+    top: 0;
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition-property: text-shadow, color, font-size, padding;
+    transition-duration: 0.8s;
+    padding: 10px 10px;
+    z-index: 10;
+    
+}
+
+#hebdo img{
+    
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    
+}
+
+
+
+#hebdo a:hover{
+    
+    text-shadow: 8px 6px 4px rgba(155, 100, 100, 1)/*rgba(0, 0, 0, 1)*/;
+    color: rgba(79, 43, 43, 1);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px 20px;
+    
+}
+
+#resa{
+    
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    width: 40%;
+    height: 300px;
+/*    margin-right: 1%;*/
+    overflow: hidden;
+    vertical-align: top;
+/*    background-color: green;*/
+    text-align: center;
+    
+}
+
+#resa figure{
+    
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+/*    background-color: rgba(0, 0, 0, 0.3);*/
+    border-radius: 100%;
+    vertical-align: middle;
+    margin: 50px 0;
+/*    border: 1px solid white;*/
+/*    background: white url("../images/bg-trip.JPG") no-repeat fixed center top;*/
+    background-color: rgba(155, 100, 100, 1);/*rgba(155, 69, 69, 1);/*rgba(155, 100, 100, 1);*/
+    
+    
+}
+
+#resa figure img{
+    
+    width: 2.6rem;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    line-height: 200px;
+    
+}
+
+#resa figure a{
+    
+    line-height: 200px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    
+}
+
+
+
+/* ############################################################################################## *\
+    
+    section menu
+    
+\* ############################################################################################## */
+
+#menus{
+    
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background: white url("../images/bg/two.jpg") no-repeat fixed center top;
+    overflow: hidden;
+    
+}
+
+section#menus article{
+
+    position: relative;
+    display: block;
+    width: 65%;
+    height: 200px;
+    overflow: hidden;
+    background-color: rgba(79, 43, 43, 0.8);
+    text-align: center;
+    margin: 1rem 0;
+    
+}
+
+section#menus article:nth-child(odd){
+    
+    margin-left: 35%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    
+}
+
+section#menus article:nth-child(even){
+    
+    margin-right: 35%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+
+#menus article h2{
+    
+    display: block;
+    margin: 50px auto;
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    
+}
+
+#menus article a{
+    
+    display: block;
+    width: 100px;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(155, 100, 100, 1);
+    
+}
+
+
+/* ############################################################################################## *\
+    
+    section facebook
+    
+\* ############################################################################################## */
+
+#facebook{
+    
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
+    background-color: rgba(79, 43, 43, 1);
+    
+}
+
+#facebook-content{
+    
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 0;
+    
+}
+
+#facebook-content h1{
+    
+    margin-bottom: 2rem;
+    
+}
+
+#facebook-content #contactt{
+    
+    display: inline-block;
+    width: 500px;
+    color: white;
+    font-size: 1rem;
+/*    margin-left: 20px;*/
+    margin: 0 20px;
+    vertical-align: top;
+/*    background-color: red;*/
+    font-size: 1rem;
+    padding-top: 20px;
+    
+}
+
+#in{
+    
+    display: inline-block;
+    
+}
+
+form#contact{
+    
+    
+    
+}
+
+form#contact input, form#contact textarea{
+    
+    width: 98.5%;
+    height: 2rem;
+    font-size: 1.4rem
+    
+}
+
+form#contact textarea{
+    
+    height: 15rem;
+    
+}
+
+form#contact input[type="submit"]{
+    
+    width: 100%;
+    border-radius: 0;
+    background-color: rgba(155, 100, 100, 1);
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 2rem;
+    
+}
+
+/*
+#facebook-content .fb-page{
+    
+    display: inline-block;
+    margin-left: 20px;
+    
+}
+*/
+
+
+/* ############################################################################################## *\
+    
+    section end
+    
+\* ############################################################################################## */
+
+section#end{
+    
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    background: white url("../images/bg/one.jpg") no-repeat fixed right bottom;
+    
+}
+
+section#end article{
+
+    position: relative;
+    display: block;
+    width: 65%;
+    height: 200px;
+    overflow: hidden;
+    background-color: rgba(79, 43, 43, 0.8);
+    text-align: center;
+    
+}
+
+section#end article a{
+    
+    display: block;
+    width: 100%;
+    line-height: 200px;
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition-property: all; /*text-shadow, color, font-size, padding-left, padding-right;*/
+    transition-duration: 0.5s;
+    
+}
+
+section#end article a:hover{
+    
+    text-shadow: 8px 6px 4px rgba(0, 0, 0, 1);
+/*    color: rgba(79, 43, 43, 1);*/
+    background-color: rgba(79, 43, 43, 1);
+    
+}
+
+section#end article:nth-child(odd) a:hover{
+    
+/*    text-align: left;*/
+/*    padding-left: 20px;*/
+    
+}
+
+section#end article:nth-child(even) a:hover{
+    
+/*    text-align: right;*/
+/*    padding-right: 20px;*/
+    
+}
+
+section#end article img{
+    
+    display: none;
+    width: 100%;
+    height: auto;
+    
+}
+
+section#end article:nth-child(odd){
+    
+    margin-left: 35%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    
+}
+
+section#end article:nth-child(even){
+    
+    margin-right: 35%;
+    margin: 1rem 0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+
+
+/* ############################################################################################## *\
+    
+    ticket cadeau...
+    
+\* ############################################################################################## */
+
+
+#plus{
+    
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background-color: rgba(79, 43, 43, 1);
+
+
+    
+}
+
+#plus-content{
+    
+    display: table;
+    position: relative;
+    width: 80%;
+    height: 300px;
+    font-size: 0;
+    margin: auto;
+    
+}
+
+#plus-content article.pastille, #plus-content article.trip{
+    
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.7rem;
+    width: 33.33%;
+    
+}
+
+#plus-content article.pastille a{
+    
+    display: table;
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    border-radius: 100%;
+/*    border: 2px solid black;*/
+    font-size 1.8rem;
+    color: white;
+    
+    text-decoration: none;
+    vertical-align: middle;
+/*    background: white url("../images/img06.jpg") no-repeat fixed center top;*/
+    background-color: rgba(155, 100, 100, 1);
+    
+}
+
+#plus-content a p{
+    
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 100%;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    
+}
+
+#plus-content a p:hover{
+    
+/*    background-color: rgba(255, 255, 255, 0.3);*/
+    
+}
+
+#tripadvisor{
+    
+    display: table;
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    border-radius: 100%;
+    vertical-align: middle;
+    
+}
+
+#TA_rated396{
+    
+    display: table-cell;
+    width: 180px;
+    height: auto;
+    margin: auto;
+    vertical-align: middle;
+    border-radius: 100%;
+    background-color: rgba(155, 100, 100, 1);
+    text-align: center;
+    padding-left: 5px;
+    
+}
+
+
+/* ############################################################################################## *\
+    
+    FOOTER
+    
+\* ############################################################################################## */
+
+
+footer{
+    
+    display: block;
+    position: relative;
+    width:100%;
+    height: 1rem;
+    background-color: white; 
+    
+}
+
+footer section#footer{
+    
+    display: block;
+    width: 100%;
+    height: 0px;
+    
+}
+
+footer p#copy{
+    
+    display: block;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    
+}
+
+
+
+
+/* ############################################################################################## *\
+    
+    GALLERIE
+    
+\* ############################################################################################## */
+
+div.photo{
+    
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 20px 0px;
+    background-color: rgba(155, 100, 100, 1);
+    text-align: center;
+}
+
+form.formGallery{
+    
+    display: block;
+    margin: 10px;
+    
+}
+
+div.min{
+    
+    display: inline-block;
+    width: 250px;
+    height: auto;
+/*    background-color: darkslategrey;*/
+    
+}
+
+div.min img{
+    
+    border-radius: 15px;
+    margin: 5px;
+    
+}
+
+span.msg{
+    
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid rgba(155, 100, 100, 1);
+    background-color: rgba(155, 100, 100, 0.7);
+    border-radius: 10px;
+    
+}
+
+
+/* ############################################################################################## *\
+    
+    HEBDO
+    
+\* ############################################################################################## */
+
+iframe.hebdo{
+    
+    width: 100%;
+    height: 1000px;
+    
+}
+
+
+
+
+/* ############################################################################################## *\
+    
+    MENU01
+    
+\* ############################################################################################## */
+
+iframe.menu01{
+    
+    width: 100%;
+    height: 1000px;
+    
+}
+
+/* ############################################################################################## *\
+    
+    MENU02
+    
+\* ############################################################################################## */
+
+iframe.menu02{
+    
+    width: 100%;
+    height: 1000px;
+    
+}
+
+
+
+/* ############################################################################################## *\
+    
+    resa.php
+    
+\* ############################################################################################## */
+
+
+#tablebookerResFrame_50332192{
+    
+/*    background-color: rgba(155, 100, 100, 1);*/
+    padding: 30px;
+    
+}
+
+/* ############################################################################################## *\
+    
+    contact
+    
+\* ############################################################################################## */
+
+
+section#contact{
+    
+    display: block;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+}
+
+section#contact h1{
+    
+    margin: 10px 0;
+    
+}
+
+section#contact p{
+    
+    margin: 15px 0;
+    
+}
+
+section#contact iframe{
+    
+    width: 80%;
+    height: 20rem;
+    margin: 10px 0;
+    
+}
+
+section#contact hr{
+    
+    margin: 10px 0;
+    
+}
+
+section#contact fieldset{
+    
+    width: 100%;
+    
+}
+
+
+/* ############################################################################################## *\
+    
+    SECTION MENU
+    
+\* ############################################################################################## */
+
+section#menu{
+    
+    text-align: center;
+    
+}
+
+section#menu article{
+    
+    display: inline-block;
+    width: 90%;
+    height: 15rem;
+    margin: 10px 0;
+    
+}
+
+/* ############################################################################################## *\
+    
+    formulaire connexion
+    
+\* ############################################################################################## */
+
+section#connect{
+    
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    
+}
+
+section#connect form{
+    
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    
+}
+
+section#connect form input{
+    
+    display: block;
+    width: 100%;
+    height: 2rem;
+    
+}
+
+/* ############################################################################################## *\
+    
+    calendar
+    
+\* ############################################################################################## */
+
+form#reserver{
+    
+    position: relative;
+    margin-top: 200px;
+    
+}
+
+.calendar
+{
+    background-color:#f7f6f3;
+    position:absolute;
+    top: 100;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    border:1px solid #0099cc;
+    -moz-opacity:0;
+    filter:alpha(opacity=0);
+     
+}
+ 
+.calendar a
+{
+    text-decoration:none;
+    color:#ffffff;
+    font-weight:bold;
+}
+ 
+.ListeDate
+{
+    background-color:#FFFFFF;
+}
+ 
+#Contenant_Calendar
+{
+    float:left;
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+ 
+#Contenant_Calendar span
+{
+    float:left;
+    display:block;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+}
+ 
+.DayDate:hover
+{
+    background-color:#8CD1EC;
+    cursor:pointer;
+}
+ 
+#curentDateString
+{
+    width:100%;
+    text-align:center;
+}
+ 
+.titleMonth
+{
+    width:100%;
+    background-color:#08a1d4;
+    color:#FFFFFF;
+    text-align:center;
+    border-bottom:1px solid #666;
+    margin:0px;
+    padding:0px;
+    padding-bottom:2px;
+    margin-top:0px;
+    margin-bottom:0px;
+    font-weight:bold;
+}
+ 
+.separator
+{
+    float:left;
+    display:block;
+    width:25px;
+}
+ 
+.currentDay
+{
+    font-weight:bold;
+    background-color:#FFB0B0;
+}
+
+/* ############################################################################################## *\
+    
+    page fournisseurs
+    
+\* ############################################################################################## */
+
+#fournisseurs{
+    
+    display: block;
+    position: relative;
+    height: auto;
+    padding-bottom: 30px;
+    text-align: center;
+    background-color: red;
+    background-image: url(../images/bg/fournisseurs.jpeg);
+    background-size: cover;
+    
+}
+
+#fournisseurs h1{
+    
+    margin: 20px 0;
+    color: rgba(155, 100, 100, 1);
+    
+}
+
+#fournisseurs table{
+    
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(79, 43, 43, 0.7);
+    
+}
+
+#fournisseurs td{
+    
+    padding: 20px 0;
+    color: rgba(155, 100, 100, 1);
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
+    
+}
+
+#fournisseurs tr > td:nth-child(2){
+    
+    width: 30%;
+    
+}
+
+#fournisseurs tr > td:nth-child(1){
+    
+    width: 50%;
+    
+}
+
+#fournisseurs tr > td:nth-child(3){
+    
+    background-color: rgba(155, 100, 100, 1);
+    
+}
+
+#fournisseurs tr > td:nth-child(3) a{
+    
+    font-weight: bold;
+    color: rgba(79, 43, 43, 1);
+    text-shadow: none;
+    
+}
+
+/* ############################################################################################## *\
+    
+    partie gestion
+    
+\* ############################################################################################## */
+
+#gestion{
+    
+    text-align: center;
+    padding: 20px 0 40px 0;
+    
+}
+
+#gestion h2{
+    
+    display: inline-block;
+    width: auto;
+    margin: 10px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(155, 100, 100, 1);
+    
+}
+
+#gestion_four{
+    
+    width: 60%;
+    margin: auto;
+    
+}
+
+#gestion_four td{
+    
+    background-color: rosybrown;
+    
+}
+
+.bouton{
+    
+    display: inline-block;
+    width: 6rem;
+    height: 1.7rem;
+    background-color: rgba(155, 100, 100, 1);
+    border: none;
+    color: rgba(79, 43, 43, 1);
+    margin: 3px;
+    font-weight: bold;
+    font-size: 1rem;
+    
+}
+
+
+
+
+
+
+
