@@ -54,7 +54,7 @@
                 
             <div><span>Axel et Mireille Letor<br>Rue du Patronage, 1A<br>1476  Houtain-Le-Val</span></div>
             <div><span id="tel">067/77.28.16</span></div>
-            <div><span>Fermé dimanche soir, lundi et mardi<br>Samedi midi : réservé aux banquets</span></div>
+            <div><span>Ouvert les midis du mercredi au dimanche<br>les soirs des vendredis et samedis<br>Samedi midi : réservé aux banquets</span></div>
 
         </article>
         
@@ -97,7 +97,7 @@
     
     <div id="menus-content">
         
-<!--        <h1>Nos Menus</h1>-->
+        <!--        <h1>Nos Menus</h1>-->
         
         <?php recup_menu(); ?>
         
