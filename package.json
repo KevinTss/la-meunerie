@@ -1,0 +1,23 @@
+{
+  "name": "la-meunerie",
+  "version": "1.0.0",
+  "description": "http://www.lameunerie.be/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinTss/la-meunerie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinTss/la-meunerie/issues"
+  },
+  "homepage": "https://github.com/KevinTss/la-meunerie#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
